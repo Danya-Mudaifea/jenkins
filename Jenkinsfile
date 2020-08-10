@@ -1,10 +1,10 @@
 pipeline { 
-    agent docker 
+    agent { docker { image 'alpine:3.7' } } 
     options {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('BuildStaging’) { 
+        stage('BuildStaging') { 
             steps { 
                 echo ‘creating infra for staging’ 
             }
