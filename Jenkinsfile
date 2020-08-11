@@ -24,8 +24,8 @@ EOF
             steps {
                 sh "docker build --tag manifest-holder:latest ."
                 sh "docker tag manifest-holder manifest-holder:${BUILD_NUMBER}"
-                sh "docker tag manifest-holder bryandollery/manifest-holder:latest"
-                sh "docker tag manifest-holder bryandollery/manifest-holder:${BUILD_NUMBER}"
+                sh "docker tag manifest-holder Danya-Mudaifea/manifest-holder:latest"
+                sh "docker tag manifest-holder Danya-Mudaifea/manifest-holder:${BUILD_NUMBER}"
             }
         }
         stage ('test') {
@@ -40,8 +40,8 @@ EOF
             steps {
                 sh "whoami"
                 sh "docker login -u ${CREDS_USR} -p ${CREDS_PSW}"
-                sh "docker push bryandollery/manifest-holder:${BUILD_NUMBER}"
-                sh "docker push bryandollery/manifest-holder:latest"
+                sh "docker push Danya-Mudaifea/manifest-holder:${BUILD_NUMBER}"
+                sh "docker push Danya-Mudaifea/manifest-holder:latest"
             }
         }
     }
